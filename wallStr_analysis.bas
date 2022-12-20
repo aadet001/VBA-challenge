@@ -1,7 +1,7 @@
 Attribute VB_Name = "Module1"
 Sub wallst()
-    Dim i, j As Integer
-    Dim k, n As Long
+    Dim i, j As Double
+    Dim k, n As Double
     Dim cur_total As Double
     'change
     'open at earliest/lowest date
@@ -14,7 +14,7 @@ Sub wallst()
     For Each ws In Worksheets
     
         'clear entries to avoid errors
-        ws.Range("I:Q").ClearContents
+        ws.Range("I:Z").ClearContents
     
         
         cur_total = 0
@@ -46,7 +46,7 @@ Sub wallst()
             'MsgBox cur_total
             For j = 2 To k
                 If ws.Cells(i, 9).Value = ws.Cells(j, 1).Value Then
-                    cur_total = cur_total + ws.Cells(j, 7).Value
+            cur_total = cur_total + ws.Cells(j, 7).Value
                     
                     If ld = 0 Or hd = 0 Then
                         ld = ws.Cells(j, 2).Value
@@ -126,4 +126,5 @@ Sub wallst()
     Next ws
 
 End Sub
+
 
